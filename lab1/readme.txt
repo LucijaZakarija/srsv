@@ -1,14 +1,14 @@
 Program je pisan u Pythonu na OS Windows.
 
-Problem raskrižja riješen je pomoću dretvi, redova poruka i dijenjene memorije.
-Dretve se stvaraju unutar petlje.
+Problem raskrižja riješen je pomoću dretvi, redova poruka i dijeljene memorije.
 
-Na početku se definira slučajan broj dretvi koje nastaju u određenom slučajnom razmaku unutar petlje. Te dretve predstavljaju sudionike u prometu. Sudionik može biti pješak ili auto. Svaki sudionik ima informacije o njemu npr. assj definira auto koje se kreće od sjevera prema jugu, a psiz pješaka koji kreće sa si prema sz. Metoda koja se povezuje uz sudionike se zove sudionik i prima informacije o sudioniku, redni broj dretve i redove poruka uz pomoć koje sudionik komunicira sa semaforom, raskrižjem i upr.
+
+Na početku programa  definira se slučajan broj dretvi koje nastaju u određenom vremenskom razmaku unutar petlje. Te dretve predstavljaju sudionike u prometu. Sudionik može biti pješak ili auto. Svaki sudionik ima informacije o njemu npr. assj definira auto koje se kreće od sjevera prema jugu, a psiz pješaka koji kreće sa si prema sz. Metoda koja se povezuje uz sudionike se zove sudionik i prima informacije o sudioniku, redni broj dretve i redove poruka uz pomoć koje sudionik komunicira sa semaforom, raskrižjem i upr.
 Ostale dretve su:
-ciklus - mijenja ciklus ovisno o broju pješaka/auta koji čekaju na zeleno.
+ciklus - mijenja ciklus ovisno o broju pješaka/auta koji čekaju na zeleno. Mijenja varijable iz kojih raskrižje čita stanje semafora.
 upr - prima podatak od sudionika da je došao na raskrižje pomoću reda poruka i prosljeđuje informaciju ciklusu
-sem - dretva koja simulira semafor, dobiva zahtjeve od sudionika pomoću globalne varijable koja predstavlja riječnik i odgovara s 1 ako sudionik smije preći cestu. Ispisuje kad dođe do promjene stanja na semaforu.
-ras - dretva koja simulira  raskrižje. Od sudionika dobiva poruku kad je stvoren, kad kreće na cestu i kada je prošao raskrižje. Ispisuje stanje na raskrižju svake sekunde. Auti i pješaci prolaze kroz raskrižje 10s.
+sem - dretva koja simulira semafor, dobiva zahtjeve od sudionika pomoću globalne varijable koja predstavlja riječnik i odgovara s 1 ako sudionik smije preći cestu. 
+ras - dretva koja simulira  raskrižje. Od sudionika dobiva poruku kad je stvoren, kad kreće na cestu i kada je prošao raskrižje. Ispisuje stanje na raskrižju svake sekunde. Pješaci prolaze kroz raskrižje 10s, a auti 4s.
 info1 - metoda uz pomoć koje se slučajno generiraju informacije o sudiniku
 
 

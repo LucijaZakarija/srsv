@@ -1,6 +1,7 @@
 //generator stvara j poslova koji traju k vremena
 //u aj spremniku za ime/id stvara prostor u koji upisuje trajanje
 //salje opisnik posla u red poruka>njega prima u posl. zaprima
+//napisano prema primjerima iz skripte
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -111,18 +112,18 @@ printf("hej ho");
   int i;
   int j=1; //broj poslova
   int k=1; //jedinica vremena
-  //struct sched_param prio;
+  struct sched_param prio;
   printf("%d",argc);
   if (argc==3) {
   j=atoi(argv[1]);
   k=atoi(argv[2]);
   }
   //vrijeme
-   /* prio.sched_priority = 60; KASNIJE
+    prio.sched_priority = 60; //KASNIJE
   if (pthread_setschedparam(pthread_self(), SCHED_RR, &prio)) { //je li ok
         fprintf(stderr, "NEMA PRAVA\n");
         exit(1);
-    }*/
+    }
   
   for (i = 0; i < j; i++) {
   int vrijeme=rand()%((k+1)-1) + 1; //inace ce ici neki random?? da

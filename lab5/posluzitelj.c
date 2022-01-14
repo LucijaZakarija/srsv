@@ -1,3 +1,4 @@
+//citanje iz reda poruka i memorije napravljeno prema kodu iz skripte
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -131,7 +131,7 @@ char * okolina=getenv("SRSV_LAB5");
         //printf("Heeeej!! ja sam radna dretva u else\n");
       for (int i = 0; i < t; i++) {
         //printf("Heeeej!! ja sam radna dretva u petlji\n");
-      printf("R%d: id:%d obrada podatka:%d  (%d/%d)\n",*n,id2,*x+i,i+1,t); //citanje memorije
+      printf("R%d: id:%d obrada podatka:%d  (%d/%d)\n",*n,id,*x+i,i+1,t); //citanje memorije
       sleep(1);
     }
 

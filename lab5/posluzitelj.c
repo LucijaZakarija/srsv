@@ -38,41 +38,28 @@ static sem_t sem; //globalna varijabla = za kazaljku na objekt u zajedničkoj me
 static sem_t sem_n;
 
 
-/*void print_list(node_t * head) {
-    node_t * current = head;
-
-    while (current != NULL) {
-        printf("%s\n", current->val);
-        current = current->next;
-    }
-}*/
 
 void append(struct Node** head_ref, char * new_data)
 {
-    /* 1. allocate node */
     struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node *last = *head_ref;  /* used in step 5*/
 
-    /* 2. put in the data  */
     new_node->data  = strdup(new_data);
 
-    /* 3. This new node is going to be the last node, so make next of
-          it as NULL*/
     new_node->next = NULL;
 
-    /* 4. If the Linked List is empty, then make the new node as head */
     if (*head_ref == NULL)
     {
        *head_ref = new_node;
        //printf("lalala");
        return;
     }
-        /* 5. Else traverse till the last node */
+
     while (last->next != NULL)
         last = last->next;
 
-    /* 6. Change the next of last node */
+
     last->next = new_node;
     //printf("lilil");
     return;
@@ -80,19 +67,15 @@ void append(struct Node** head_ref, char * new_data)
     
     }
     
-    /* Given a reference (pointer to pointer) to the head of a
-   list and a position, deletes the node at the given
-   position */
+
 char* pop(struct Node** head_ref)
 {
     // If linked list is empty
     if (*head_ref == NULL)
         return NULL;
  
-    // Store head node
+
     struct Node* temp = *head_ref;
- 
-    // If head needs to be removed
 
          char * rez=temp->data;
         *head_ref = temp->next; // Change head
@@ -149,11 +132,10 @@ char * okolina=getenv("SRSV_LAB5");
       for (int i = 0; i < t; i++) {
         //printf("Heeeej!! ja sam radna dretva u petlji\n");
       printf("R%d: id:%d obrada podatka:%d  (%d/%d)\n",*n,id2,*x+i,i+1,t); //citanje memorije
-      ///*****OVDJE TREBA RADNO CEKANJE
       sleep(1);
     }
 
-    //shm_unlink(ime); //myb ovo
+    shm_unlink(ime); 
   
   }
 } else {
@@ -208,15 +190,6 @@ int main(int argc, char *argv[]) {
     }
 
   }
-  /*for (i = 0; i < n; i++)
-    int t1=t+1;
-    if (!fork()) {
-    
-    pthread_create(&tid, &attr, radna_dretva, (void *)t1);
-      //int vrijeme=k; //inace ce ici neki random??
-      //radna_dretva(i); //vidi hoce li trebati atoi() iz char-a
-      exit(0);
-    }*/
 
     
     //probno-> procitaj sadrzaj mem
